@@ -23,7 +23,9 @@ You can decrypt it using Wireshark, client random and master key in 'tls-keys' f
 
 Get session keys using 'tls_decrypt'. Extract server random using wireshark (it is not ecnrypted) and run tls_decrypt:
 ```
-./tls_decrypt --client_random 62a36d3da1f8fdc272cd248ed71a7a686ee666617170c4ff51c0e6ea54dcd556 --server_random 7d60c425c1c768a5cc63d2c617c3d09c4f7efc654af6ab96444f574e47524401 --master 51f8471166c833a36aad63c05f8545238ae5262bfb757f2a668f6eed93e521e51b1373cdebdc14a0bc1e7008ba3cc3f2
+./tls_decrypt --client_random 62a36d3da1f8fdc272cd248ed71a7a686ee666617170c4ff51c0e6ea54dcd556 \
+              --server_random 7d60c425c1c768a5cc63d2c617c3d09c4f7efc654af6ab96444f574e47524401 \
+              --master 51f8471166c833a36aad63c05f8545238ae5262bfb757f2a668f6eed93e521e51b1373cdebdc14a0bc1e7008ba3cc3f2
 ```
 
 Expected output:
@@ -39,7 +41,12 @@ encrypted-s2c-http-ok.bin - dump of ecnrypted HTTP response TLS packet from pcap
 
 Decrypt http get dump by running:
 ```
-$ ./tls_decrypt --client_random 62a36d3da1f8fdc272cd248ed71a7a686ee666617170c4ff51c0e6ea54dcd556 --server_random 7d60c425c1c768a5cc63d2c617c3d09c4f7efc654af6ab96444f574e47524401 --master 51f8471166c833a36aad63c05f8545238ae5262bfb757f2a668f6eed93e521e51b1373cdebdc14a0bc1e7008ba3cc3f2 --input ../encrypted-c2s-http-get.bin --counter 1 --to_server
+$ ./tls_decrypt --client_random 62a36d3da1f8fdc272cd248ed71a7a686ee666617170c4ff51c0e6ea54dcd556 \
+                --server_random 7d60c425c1c768a5cc63d2c617c3d09c4f7efc654af6ab96444f574e47524401 \
+                --master 51f8471166c833a36aad63c05f8545238ae5262bfb757f2a668f6eed93e521e51b1373cdebdc14a0bc1e7008ba3cc3f2 \
+                --input ../encrypted-c2s-http-get.bin \
+                --counter 1 \
+                --to_server
 ```
 
 Expected output:
@@ -59,7 +66,12 @@ decrypted input:
 
 Decrypt http response dump by running:
 ```
-$ ./tls_decrypt --client_random 62a36d3da1f8fdc272cd248ed71a7a686ee666617170c4ff51c0e6ea54dcd556 --server_random 7d60c425c1c768a5cc63d2c617c3d09c4f7efc654af6ab96444f574e47524401 --master 51f8471166c833a36aad63c05f8545238ae5262bfb757f2a668f6eed93e521e51b1373cdebdc14a0bc1e7008ba3cc3f2 --input ../encrypted-s2c-http-ok.bin --counter 1 --to_client
+$ ./tls_decrypt --client_random 62a36d3da1f8fdc272cd248ed71a7a686ee666617170c4ff51c0e6ea54dcd556 \
+                --server_random 7d60c425c1c768a5cc63d2c617c3d09c4f7efc654af6ab96444f574e47524401 \
+                --master 51f8471166c833a36aad63c05f8545238ae5262bfb757f2a668f6eed93e521e51b1373cdebdc14a0bc1e7008ba3cc3f2 \
+                --input ../encrypted-s2c-http-ok.bin \
+                --counter 1 \
+                --to_client
 ```
 
 Expected output:
