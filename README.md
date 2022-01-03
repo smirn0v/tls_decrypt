@@ -1,3 +1,4 @@
+```
 Usage: tls_decrypt --client_random <32 bytes in hex>
                    --server_random <32 bytes in hex>
                    --master <48 bytes in hex>
@@ -8,6 +9,7 @@ Usage: tls_decrypt --client_random <32 bytes in hex>
                    ]
 Only AES128 GCM Ciphersuite is supported.
 Only 'Application Data' type TLS packets will be decrypted.If no input file given - only keys will be generated.
+```
 
 You can find example TLS HTTP session dump 'network-dump.pcap'. Session was created by the following bash commands
 ```
