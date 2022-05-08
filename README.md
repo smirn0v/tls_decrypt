@@ -1,3 +1,4 @@
+See details at https://smirn0v.notion.site/TLS-1-2-brief-insight-d8af09d39c11455e807d11abdb027fdd
 ```
 Usage: tls_decrypt --client_random <32 bytes in hex>
                    --server_random <32 bytes in hex>
